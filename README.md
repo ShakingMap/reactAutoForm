@@ -7,9 +7,12 @@ This is a demo, waiting to continue to develop
 const demo = React.createClass({
  getInitialState: function () {
         return {
-
             data: {}
         };
+    },
+  handleFunc() {
+
+  //code
     },
   renderBody(){
         let that = this;
@@ -19,9 +22,8 @@ const demo = React.createClass({
             buttons: [
                 {
                     id: 'saveBtn',
-                    name: '提交保存',
+                    name: '鎻愪氦淇濆瓨',
                     fn: function (event) {
-
                         that.insert(event);
                     }
                 }
@@ -65,13 +67,12 @@ const demo = React.createClass({
                     label: 'demo',
                     model: 'checkbox',
                     options: ["1","2","3"]
-                }
-                  ，
-                {
+                },
+               {
                     name: 'lease_type',
                     type: 'text',
                     formType: 'array',
-                    label: '租赁方式',
+                    label: '绉熻祦鏂瑰紡',
                     model: 'checkbox',
                     options: [
                         {label: 'one', value: '1'},
@@ -87,5 +88,17 @@ const demo = React.createClass({
             ],
             data: this.state.data
         };
+         return (
+                    <div>
+
+                        <ReactAutoForm form={form} onChange={this.handleFunc}/>
+                    </div>
+                )},
+
+            render(){
+                   return (
+                       this.renderBody()
+                   )
+            }
 })
 ```
